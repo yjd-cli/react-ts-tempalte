@@ -1,0 +1,56 @@
+{
+  "compilerOptions": {
+    // "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    "sourceMap": true,
+    "allowJs": false,
+    /*允许编译JS文件*/
+    /* 'react' 模式下，ts 会将 tsx 编译成 jsx 后再将 jsx 编译成 js*/
+    /* 'preserve' 模式下，ts 会将 tsx 编译成 jsx 后，不再将 jsx 编译成 js，保留 jsx */
+    "jsx": "react",
+    "preserveConstEnums": true,
+    "esModuleInterop": true,
+    /* 当没有默认导出的时候允许默认导入，这个在代码执行的时候没有作用，只是在类型检查的时候生效 */
+    "allowSyntheticDefaultImports": true,
+    "diagnostics": true,
+    /*当目标是ES5或ES3的时候提供对for-of、扩展运算符和解构赋值中对于迭代器的完整支持*/
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "dom",
+      "scripthost",
+      "es5",
+      "es6",
+      "es7",
+      "dom.iterable"
+    ],
+    "baseUrl": ".",
+    /*在解析非绝对路径模块名的时候的基准路径*/
+    "paths": {
+      /*路径映射的集合*/
+      "@public/*": [
+        "public/*"
+      ],
+      "@src/*": [
+        "src/*"
+      ],
+      "@assets":[
+        "src/assets"
+      ],
+      "@redux-store/*": [
+        "src/redux-store/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "build"
+  ]
+}
